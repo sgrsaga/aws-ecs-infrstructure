@@ -1,0 +1,26 @@
+{
+	"originatingSystemCode": "OV",
+	"events": [
+		{
+			"messageTypeCode": "CP06CourseResponse",
+			"messageVersion": "1.0.0",
+			"actionType": "CREATE",
+			"namespace": "currentgen",
+			"routingTags": null,
+			"payload": {
+				"namespaceCode": "CurrentGen",
+				"messageTypeCode": "CP06CourseResponse",
+				"messageVersion": "1.0.0",
+				"environmentCode": "PRD",
+				"originatingSystemCode": "OV",
+				"transactionTypeCode": "Create",
+				"transactionDt": "2022-08-10T13:08:58.165Z",
+				"messageId": "967b75bf-f5e4-4725-b47a-777d3d53affa",
+				"transactionId": "fc51f07b-de2c-4f65-a9f4-dd6b751f3a7b",
+				"responseType": "failed",
+				"creationDt": "2022-08-10T13:08:58.165Z",
+				"modificationDt": "2022-08-10T13:08:58.165Z"
+			}
+		}
+	]
+}
