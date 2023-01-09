@@ -18,6 +18,19 @@ terraform {
 }
 */
 
+## Terraform Backend
+terraform {
+  backend "remote" {
+    organization = "home_org_sagara"
+    hostname = "app.terraform.io"
+    workspaces {
+      name = "Test-Repo"
+    }
+  }
+}
+
+
+
 provider "aws" {
   region = "us-east-1"
   default_tags {
