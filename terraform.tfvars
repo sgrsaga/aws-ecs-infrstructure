@@ -1,5 +1,5 @@
 ## Create IAM user
-username = "profbob"
+#username = "profbob"
 
 ###### VPC parameters
 # 1. Create a VPC
