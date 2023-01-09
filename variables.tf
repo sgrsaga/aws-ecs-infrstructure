@@ -1,9 +1,10 @@
 ### IAM user
+/*
 ## username
 variable "username" {
   type = string
 }
-
+*/
 # 1.1. Create a VPC
 variable "vpc_name" {
   type = string
