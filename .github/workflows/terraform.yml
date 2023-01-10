@@ -92,9 +92,9 @@ jobs:
     #  run: terraform fmt -check
 
     # select the cloud workspce
-    - name: Select Terraform Cloud Workspace
-      run: terraform workspace select Test-Repo-Dev
-      
+    #- name: Select Terraform Cloud Workspace
+    #  run: terraform workspace select Test-Repo-Dev
+
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan -input=false
