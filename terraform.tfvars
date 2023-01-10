@@ -35,8 +35,8 @@ public_access_sg_ingress_rules = [
     },
     {
       protocol = "tcp"
-      from_port = 8080
-      to_port = 8080
+      from_port = 8082
+      to_port = 8082
     },
     {
       protocol = "tcp"
