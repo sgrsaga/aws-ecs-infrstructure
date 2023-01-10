@@ -8,7 +8,7 @@ variable "username" {
 # 1.1. Create a VPC
 variable "vpc_name" {
   type = string
-  default = "NEW_VPC"
+  default = "TERA_VPC"
 }
 variable "vpc_cidr" {
   type = string
