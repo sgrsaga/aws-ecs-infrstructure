@@ -18,6 +18,8 @@ terraform {
   }
 }
 */
+
+/*
 # Terraform Cloud API driven flow
 terraform {
   cloud {
@@ -28,19 +30,19 @@ terraform {
     }
   }
 }
+*/
 
-/*
 ## Terraform Backend
 terraform {
   backend "remote" {
     organization = "home_org_sagara"
     hostname = "app.terraform.io"
     workspaces {
-      name = "Test-Repo"
+      name = "Test-Repo-Dev"
     }
   }
 }
-*/
+
 
 
 provider "aws" {
