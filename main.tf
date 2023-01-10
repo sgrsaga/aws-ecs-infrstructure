@@ -38,7 +38,7 @@ terraform {
     organization = "home_org_sagara"
     hostname = "app.terraform.io"
     workspaces {
-      name = "Test-Repo-Dev"
+      prefix = "Test-Repo-"
     }
   }
 }
