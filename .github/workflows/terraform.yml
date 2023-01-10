@@ -46,7 +46,7 @@ name: 'Terraform'
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "dev" ]
   pull_request:
 
 permissions:
@@ -81,10 +81,17 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region : ${{ secrets.AWS_REGION }}
-    # Get the Full branch name
-    - name: Get branch name
-      id: branch_name
-      run: echo "::set-output name=branch_name::$(echo "${{ github.ref }}" | cut -d '/' -f 3)"
+
+    # Check the branch and create the workspace
+    - name: Terraform create workspace 
+      if: github.ref == 'refs/heads/dev'
+      run: terraform -chdir="./environment" workspace new dev
+
+    # Check the branch and select the workspace
+    - name: Terraform select workspace 
+      if: github.ref == 'refs/heads/dev'
+      run: terraform -chdir="./environment" workspace select dev
+
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
