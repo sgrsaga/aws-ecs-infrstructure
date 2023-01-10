@@ -75,10 +75,6 @@ jobs:
       with:
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-    # select the cloud workspce
-    - name: Select Terraform Cloud Workspace
-      run: terraform workspace select Test-Repo-Dev
-
     # Set AWS Credentials
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
@@ -95,6 +91,10 @@ jobs:
     #- name: Terraform Format
     #  run: terraform fmt -check
 
+    # select the cloud workspce
+    - name: Select Terraform Cloud Workspace
+      run: terraform workspace select Test-Repo-Dev
+      
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan -input=false
