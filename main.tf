@@ -8,12 +8,24 @@ terraform {
   }
 }
 
+/*
 ## Setting the AWS S3 as the Terraform backend
 terraform {
   backend "s3" {
     bucket = "sagara-test-b1/Test-Repo/"
     key    = "terraform.tfstate"
     region = "ap-south-1"
+  }
+}
+*/
+# Terraform Cloud API driven flow
+terraform {
+  cloud {
+    organization = "home_org_sagara"
+
+    workspaces {
+      name = "Test-Repo-Dev"
+    }
   }
 }
 
