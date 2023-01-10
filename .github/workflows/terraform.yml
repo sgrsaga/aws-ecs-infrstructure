@@ -101,11 +101,22 @@ jobs:
 
     # Terraform workflow for dev
     - name: Terraform workflow for Dev
+      if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
       run: |
         terraform init
         terraform workspace new ${{ env.envdev }}
         terraform workspace select ${{ env.envdev }} && terraform plan -input=false
         terraform workspace select ${{ env.envdev }} && terraform apply -auto-approve -input=false
+        terraform workspace select ${{ env.envdev }} && terraform destroy -auto-approve
+
+    # Terraform workflow for test
+    - name: Terraform workflow for test
+      if: github.ref == 'refs/heads/test' && github.event_name == 'push'
+      run: |
+        terraform init
+        terraform workspace new ${{ env.envtest }}
+        terraform workspace select ${{ env.envtest }} && terraform plan -input=false
+        terraform workspace select ${{ env.envtest }} && terraform apply -auto-approve -input=false
 
     # Generates an execution plan for Terraform
     #- name: Terraform Plan
