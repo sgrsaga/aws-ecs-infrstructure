@@ -80,6 +80,11 @@ variable "public_access_sg_ingress_rules" {
     },
     {
       protocol = "tcp"
+      from_port = 8080
+      to_port = 8080
+    },
+    {
+      protocol = "tcp"
       from_port = 22
       to_port = 22
     },
