@@ -7,17 +7,17 @@ terraform {
     }
   }
 }
-/*
+
 ## Setting the AWS S3 as the Terraform backend
 terraform {
   backend "s3" {
-    bucket = "terraform-state-file-20221104-terracode"
+    bucket = "sagara-test-b1/Test-Repo/"
     key    = "terraform.tfstate"
-    region = "us-east-1"
+    region = "ap-south-1"
   }
 }
-*/
 
+/*
 ## Terraform Backend
 terraform {
   backend "remote" {
@@ -28,7 +28,7 @@ terraform {
     }
   }
 }
-
+*/
 
 
 provider "aws" {
