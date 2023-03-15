@@ -169,7 +169,7 @@ variable "delivery_email" {
 variable "bill_threshold_amount" {
     type = number
 }
-
+*/
 
 ############## ECS SErvice configure
 ## Autosacling EC2 parameters
@@ -217,4 +217,3 @@ variable "domain_name_used" {
     type = string  
 }
 
-*/
