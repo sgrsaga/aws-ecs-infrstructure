@@ -17,9 +17,9 @@ public_rt = "PUBLIC_RT"
 private_rt = "PRIVATE_RT"
 
 # 1.4. Create 3 Public Subnets
-public_subnets = ["10.0.1.0/24","10.0.2.0/24","10.0.3.0/24","10.0.4.0/24","10.0.5.0/24","10.0.6.0/24"]
+public_subnets = ["10.0.1.0/24","10.0.2.0/24","10.0.3.0/24"]
 # 1.5. Create 3 Private Subnets
-private_subnets = ["10.0.7.0/24","10.0.8.0/24","10.0.9.0/24","10.0.10.0/24","10.0.11.0/24","10.0.12.0/24"]
+private_subnets = ["10.0.7.0/24","10.0.8.0/24","10.0.9.0/24"]
 
 # 1.6. Create Public access Security Group
 public_access_sg_ingress_rules = [
