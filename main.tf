@@ -89,7 +89,7 @@ module "main_network" {
 #   depends_on = [module.main_network] 
 # }
 
-/*
+
 ## 4. Call ECS creation module
 module "ecs_cluster" {
   source = "./module/ecs"
@@ -125,6 +125,7 @@ module "route53" {
   ]
 }
 
+/*
 ## 5. Create monitoring
 module "monitor_and_alarm" {
   source = "./module/monitor"

@@ -164,7 +164,6 @@ resource "aws_s3_bucket" "lb_logs" {
   
   tags = {
     Name        = "ALB_LOG_Bucket"
-    Environment = "alb"
   }
 }
 
@@ -230,7 +229,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "access_logs_encry
 # Create Application Load balancer
 resource "aws_lb" "ecs_lb" {
   name               = "ecs-lb"
-  internal           = false
+  internal           = true
   load_balancer_type = "application"
   security_groups    = [data.aws_security_group.public_sg.id]
   subnets            = data.aws_subnets.public_subnets.ids

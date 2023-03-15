@@ -63,18 +63,20 @@ db_username = "Project"
 is_storage_encrypted = "true"
 max_allocated_storage_value = 500
 muli_az_enable = "true"
+*/
 
-
+/*
 ############ Monitor and Alarm
 delivery_email = "sgrsagara@gmail.com"
 bill_threshold_amount = 3
+*/
 
 ############ ECS Cluster variables
-alb_access_log_s3_bucket = "alb-access-logs-sgr-test-20221116"
+alb_access_log_s3_bucket = "alb-access-logs-sgr-test-20230315"
 ## Autosacling EC2 parameters
 ec2_image_id = "ami-03dbf0c122cb6cf1d"
 ec2_instance_type = "t2.micro"
-ssh_keyname = "EcsKey"
+ssh_keyname = "newkey"
 max_tasks = 6
 min_tasks = 1
 asg_avg_cpu_target = 1.75
@@ -82,5 +84,3 @@ ecs_task_avg_cpu_target = 0.25
 
 ############# Route 53 #####
 domain_name_used = "devops-expert.online"
-
-*/
