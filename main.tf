@@ -8,7 +8,7 @@ terraform {
   }
 }
 
-/*
+
 ## Setting the AWS S3 as the Terraform backend
 terraform {
   backend "s3" {
@@ -17,7 +17,7 @@ terraform {
     region = "ap-south-1"
   }
 }
-*/
+
 
 /*
 # Terraform Cloud API driven flow
@@ -30,7 +30,7 @@ terraform {
     }
   }
 }
-*/
+
 
 ## Terraform Backend
 terraform {
@@ -42,7 +42,7 @@ terraform {
     }
   }
 }
-
+*/
 
 
 provider "aws" {
