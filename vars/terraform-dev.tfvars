@@ -3,7 +3,7 @@
 
 ###### VPC parameters
 # 1. Create a VPC
-vpc_name = "Project_VPC"
+vpc_name = "OpsTools-VPC"
 vpc_cidr = "10.0.0.0/16"
 public_source_cidr = ["0.0.0.0/0"]
 public_source_cidr_v6 = ["::/0"]
