@@ -67,7 +67,7 @@ resource "aws_subnet" "public_subnet" {
     availability_zone = element(data.aws_availability_zones.azs.names, count.index )
     map_public_ip_on_launch = true
     tags = {
-      Name = "PUBLIC_SUBNET_${count.index}"
+      Name = "PUBLIC_SUBNET_${count.index + 1}"
       Access = "PUBLIC"
     }
 }
@@ -85,7 +85,7 @@ resource "aws_subnet" "private_subnet" {
     vpc_id = aws_vpc.new_vpc.id
     availability_zone = element(data.aws_availability_zones.azs.names, count.index )
     tags = {
-      Name = "PRIVATE_SUBNET_${count.index}"
+      Name = "PRIVATE_SUBNET_${count.index + 1}"
       Access = "PRIVATE"
     }
 }
