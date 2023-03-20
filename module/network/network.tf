@@ -197,7 +197,7 @@ resource "aws_eip" "nat_public_ip" {
 # 1.9. Create a NatGateway and link a private subnet
 resource "aws_nat_gateway" "gateway_for_private_sn" {
   allocation_id = aws_eip.nat_public_ip.id
-  subnet_id = element(aws_subnet.private_subnet.*.id, 0 )
+  subnet_id = element(aws_subnet.public_subnet.*.id, 0 )
   depends_on = [aws_eip.nat_public_ip, aws_subnet.public_subnet]
   tags = {
     Name = "NAT-GW-PUBLIC-ACCESS"
