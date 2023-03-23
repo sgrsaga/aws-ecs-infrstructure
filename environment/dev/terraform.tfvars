@@ -74,9 +74,9 @@ bill_threshold_amount = 3
 ############ ECS Cluster variables
 alb_access_log_s3_bucket = "alb-access-logs-sgr-test-20230315"
 ## Autosacling EC2 parameters
-ec2_image_id = "ami-03dbf0c122cb6cf1d"
-ec2_instance_type = "t2.micro"
-ssh_keyname = "newkey"
+#ec2_image_id = "ami-03dbf0c122cb6cf1d"
+#ec2_instance_type = "t2.micro"
+#ssh_keyname = "newkey"
 max_tasks = 6
 min_tasks = 1
 asg_avg_cpu_target = 1.75
