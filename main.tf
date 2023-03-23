@@ -89,7 +89,7 @@ module "main_network" {
 #   depends_on = [module.main_network] 
 # }
 
-/*
+
 ## 4. Call ECS creation module
 module "ecs_cluster" {
   source = "./module/ecs"
@@ -97,9 +97,9 @@ module "ecs_cluster" {
   ## ALB Access logs S3 bucket
   alb_access_log_s3_bucket = var.alb_access_log_s3_bucket
   ## Autoscaling EC2 parameters
-  ec2_image_id = var.ec2_image_id
-  ec2_instance_type = var.ec2_instance_type
-  ssh_keyname = var.ssh_keyname
+  #ec2_image_id = var.ec2_image_id
+  #ec2_instance_type = var.ec2_instance_type
+  #ssh_keyname = var.ssh_keyname
 
   ## MIN and MAX value are used to define minimim and maximum EC2 and Task counts
   max_tasks = var.max_tasks
@@ -110,7 +110,7 @@ module "ecs_cluster" {
   ecs_task_avg_cpu_target = var.ecs_task_avg_cpu_target
   depends_on = [module.main_network] 
 }
-
+/*
 
 ## 4. Route 53 Configuration
 module "route53" {

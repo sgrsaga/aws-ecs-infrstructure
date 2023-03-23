@@ -48,7 +48,7 @@ EOF
 
 resource "aws_iam_role_policy_attachment" "EcsEc2PolicyRoleAttach" {
   role       = aws_iam_role.ecsServiceRoleNew.name
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceRole"
+  policy_arn = "arn:aws:iam::aws:policy/aws-service-role/AmazonECSServiceRolePolicy"
 }
 
 ## Create ecsTaskExecutionRole role with Policy "AmazonECSTaskExecutionRolePolicy"
@@ -118,7 +118,7 @@ resource "aws_iam_role_policy_attachment" "EcsServiceAutoScalePolicyRoleAttach" 
 data "aws_iam_role" "role_ecsInstanceRole" {
   name = "ecsInstanceRole"
 }
-*/
+
 resource "aws_iam_role" "ecsInstanceRoleNew" {
   name = "ecsInstanceRoleNew"
 
@@ -143,8 +143,11 @@ resource "aws_iam_role_policy_attachment" "Ec2ContainerServicePolicyRoleAttach" 
   role       = aws_iam_role.ecsInstanceRoleNew.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role"
 }
+*/
+
 ##----------------------------------##
 
+/*
 ## Create random value to set for IAM instance profile
 resource "random_string" "instance_profile"{
   length           = 8
@@ -156,6 +159,8 @@ resource "aws_iam_instance_profile" "ecs_agent_profile" {
   name = "ecsagent-${random_string.instance_profile.result}"
   role = aws_iam_role.ecsInstanceRoleNew.name
 }
+*/
+
 
 ## Create S3 bucket for access_logs
 resource "aws_s3_bucket" "lb_logs" {
@@ -252,8 +257,8 @@ resource "aws_lb" "ecs_lb" {
 # Target Group for ALB
 resource "aws_lb_target_group" "ecs_alb_tg" {
   name     = "ecs-alb-tg"
-  target_type = "instance"
-  port     = 8000
+  target_type = "ip"
+  port     = 80
   protocol = "HTTP"
   vpc_id   = var.vpc_id
   health_check {
@@ -334,6 +339,7 @@ resource "aws_ecs_task_definition" "project_task" {
   ]
 }
 
+/*
 ## Create EC2 Launch Configuration for the AutoScaling Group
 resource "aws_launch_configuration" "ecs_ec2_launch_config" {
   image_id = var.ec2_image_id
@@ -394,6 +400,7 @@ resource "aws_autoscalingplans_scaling_plan" "ec2_scaling_plan" {
     }
   }
 }
+*/
 
 # ECS Service configuration - This block maintain the link between all services.
 resource "aws_ecs_service" "service_node_app" {
@@ -401,7 +408,7 @@ resource "aws_ecs_service" "service_node_app" {
   cluster         = aws_ecs_cluster.project_cluster.id
   task_definition = aws_ecs_task_definition.project_task.arn
   desired_count   = 1
-  launch_type = "EC2"
+  launch_type = "FARGATE"
   health_check_grace_period_seconds = 300
   iam_role        = aws_iam_role.ecsServiceRoleNew.arn
   depends_on      = [
