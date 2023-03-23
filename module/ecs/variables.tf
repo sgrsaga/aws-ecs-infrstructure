@@ -3,6 +3,7 @@ variable "vpc_id" {
     type = string  
 }
 
+/*
 ## Autosacling EC2 parameters
 # EC2 image id
 variable "ec2_image_id" {
@@ -16,6 +17,7 @@ variable "ec2_instance_type" {
 variable "ssh_keyname" {
     type = string  
 }
+*/
 
 ## MAX Running task count
 variable "max_tasks" {
