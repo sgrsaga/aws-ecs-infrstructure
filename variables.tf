@@ -172,6 +172,7 @@ variable "bill_threshold_amount" {
 */
 
 ############## ECS SErvice configure
+/*
 ## Autosacling EC2 parameters
 # EC2 image id
 variable "ec2_image_id" {
@@ -185,6 +186,7 @@ variable "ec2_instance_type" {
 variable "ssh_keyname" {
     type = string  
 }
+*/
 ## ALB Access logs saving bucket name
 variable "alb_access_log_s3_bucket" {
     type = string
