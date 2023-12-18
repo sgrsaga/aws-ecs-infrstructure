@@ -18,3 +18,7 @@ Manual actions
 
 Architecture:
 
+![High Level architecture](ECS-Ec1.png)
+
+
+![GitHub Actions based pipeline](GitHub_Action_CICD.png)
