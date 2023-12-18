@@ -10,7 +10,7 @@ Architecture:
 Prerquisites
 1. There should be a SSH Key Pair created
 2. There should be a Route53 domain registered to use
-3. Create IMA user with relevant permissions with Access-Key and Secret-Access-Key to configure AWS CLI
+3. Create IAM user with relevant permissions with Access-Key and Secret-Access-Key to configure AWS CLI (We can replace this with OIDC as well)
 
 
 Manual actions
