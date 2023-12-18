@@ -1,5 +1,12 @@
 # Project read me file
 
+Architecture:
+
+![High Level architecture](ECS-Ec2.png)
+
+
+![GitHub Actions based pipeline](GitHub_Action_CICD.png)
+
 Prerquisites
 1. There should be a SSH Key Pair created
 2. There should be a Route53 domain registered to use
@@ -16,9 +23,3 @@ Manual actions
     # docker tag sgrsaga/project_repo_aws:latest project_repo_aws:latest
 * Then you can use the ECR push image commands to push the image to ECR Repository
 
-Architecture:
-
-![High Level architecture](ECS-Ec1.png)
-
-
-![GitHub Actions based pipeline](GitHub_Action_CICD.png)
