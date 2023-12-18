@@ -2,10 +2,10 @@
 
 Architecture:
 
-![High Level architecture](ECS-Ec2.png)
+![High Level architecture](images/ECS-Ec2.png)
 
 
-![GitHub Actions based pipeline](GitHub_Action_CICD.png)
+![GitHub Actions based pipeline](images/GitHub_Action_CICD.png)
 
 Prerquisites
 1. There should be a SSH Key Pair created
