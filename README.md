@@ -29,8 +29,12 @@ In this project we discuss how we can implement a complete AWS ECS environment w
 ## GitHub Action pipeline
 
 ![GitHub Actions based pipeline](images/GitHub_Action_CICD.png)
+## Hi, I'm Sagara! 👋
+
+
 ## 🚀 About Me
 I am an engineer with over 13 years of experience in the IT industry, working with various domains such as education, procurement, travel management, and corporate finance. I have multiple AWS certifications, a Kubernetes Certification, a HashiCorp Terraform certification and RedHat Certifications that demonstrate my proficiency and knowledge in Cloud engineering, DevOps engineering and Infrastructure automation.
+
 
 
 
